@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Loop Systems: pilot programs and system design for infrastructure and waste management.">
+  <title>Loop Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:   #090d12;
+      --line: rgba(255,255,255,0.07);
+      --teal: #00c9a7;
+      --blue: #3b82f6;
+      --dim:  rgba(255,255,255,0.38);
+      --mid:  rgba(255,255,255,0.82);
+      --text: rgba(255,255,255,0.92);
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: "Unbounded", system-ui, sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .grid-bg {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 30%, transparent 100%);
+    }
+
+    .orb {
+      position: fixed; pointer-events: none; z-index: 0;
+      border-radius: 50%; filter: blur(120px);
+    }
+    .orb-a { width: 600px; height: 600px; top: -160px; left: -100px; background: var(--blue); opacity: 0.18; }
+    .orb-b { width: 500px; height: 500px; bottom: -100px; right: -80px; background: var(--teal); opacity: 0.13; }
+
+    .page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 6vw, 6rem) clamp(2rem, 4vw, 3rem);
+    }
+
+    h1 {
+      font-family: "Unbounded", system-ui, sans-serif;
+      font-size: clamp(6rem, 22vw, 20rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--blue);
+    }
+
+    .hero-body {
+      margin-top: clamp(2.5rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.25rem, 2.5vw, 2rem);
+      max-width: 1100px;
+    }
+
+    .hero-body p {
+      font-family: "Unbounded", system-ui, sans-serif;
+      font-size: clamp(1.375rem, 2.4vw, 2rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--mid);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: clamp(1.25rem, 3vw, 1.75rem) clamp(2rem, 6vw, 6rem);
+    }
+
+    .footer-contact a {
+      font-family: "Unbounded", system-ui, sans-serif;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--teal);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .footer-contact a:hover { opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <div class="page">
+    <main class="hero">
+      <h1>Loop<br>Systems</h1>
+
+      <div class="hero-body">
+        <p>We develop infrastructure and waste systems that improve how communities function.</p>
+        <p>Pilot programs and system design for infrastructure and waste management.</p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-contact">
+        <a href="mailto:info@loopsystems.ca">info@loopsystems.ca</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
